@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var translationRouter = require('./routes/translation');
+var englishRouter = require('./routes/english');
+var urduRouter = require('./routes/urdu');
 var vocabularyRouter = require('./routes/vocabulary');
 
 var app = express();
@@ -23,7 +24,8 @@ app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js/')));
 
 app.use('/', indexRouter);
-app.use('/translation', translationRouter);
+app.use('/english', englishRouter);
+app.use('/urdu', urduRouter);
 app.use('/vocabulary', vocabularyRouter);
 
 // catch 404 and forward to error handler
