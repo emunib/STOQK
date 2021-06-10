@@ -1,19 +1,13 @@
 var scrolling = false;  // flag to determine if scrolling
 
-$.extend($.scrollTo.defaults, {  // default settings for scrollTo
-    axis: 'x',
-    duration: 500,
-    offset: {top: 0, left: -$(window).width()},
-    over: {top: 0, left: 1},
-    onAfter: function () {  // after scrolling animation completes
-        scrolling = false;
-    }
-});
-
 function scrollToEl(el) {
     if ($(el).length > 0 && !scrolling) {  // the element exist and not already scrolling
         scrolling = true;
         $('.wrapper').scrollTo($(el), {
+            axis: 'x',
+            duration: 500,
+            offset: {top: 0, left: -$(el).parent().width()},
+            over: {top: 0, left: 1},
             onAfter: function (el) {  // after scrolling animation completes
                 scrolling = false;
                 $('.current').removeClass('current');  // make the target element active
