@@ -3,6 +3,8 @@ var scrolling = false;  // flag to determine if scrolling
 $.extend($.scrollTo.defaults, {  // default settings for scrollTo
     axis: 'x',
     duration: 500,
+    offset: {top: 0, left: -$(window).width()},
+    over: {top: 0, left: 1},
     onAfter: function () {  // after scrolling animation completes
         scrolling = false;
     }
@@ -11,7 +13,13 @@ $.extend($.scrollTo.defaults, {  // default settings for scrollTo
 function scrollToEl(el) {
     if ($(el).length > 0 && !scrolling) {  // the element exist and not already scrolling
         scrolling = true;
-        $('.wrapper').scrollTo($(el));
+        $('.wrapper').scrollTo($(el), {
+            onAfter: function (el) {
+                scrolling = false;
+                $('.current').removeClass('current');
+                $(el).addClass('current');
+            }
+        });
     }
 }
 
@@ -39,9 +47,9 @@ $(document).ready(function () {
         var target;  // new active element
 
         if (relPos > 0) {  // element is offscreen to the right
-            target = current.next('img');  // adjacent left element is visible
+            target = current.next('.slide');  // adjacent left element is visible
         } else if (relPos < 0) {  // element is offscreen to the right
-            target = current.prev('img');  // adjacent right element is visible
+            target = current.prev('.slide');  // adjacent right element is visible
         }
 
         if (target) {  // if there is an adjacent element make it the active element
@@ -54,10 +62,10 @@ $(document).ready(function () {
         console.log(scrolling);
         switch (e.key) {
             case "ArrowLeft":
-                scrollToEl($('.current').next('img'));
+                scrollToEl($('.current').next('.slide'));
                 break;
             case "ArrowRight":
-                scrollToEl($('.current').prev('img'));
+                scrollToEl($('.current').prev('.slide'));
                 break;
         }
     });
