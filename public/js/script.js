@@ -14,9 +14,9 @@ function scrollToEl(el) {
     if ($(el).length > 0 && !scrolling) {  // the element exist and not already scrolling
         scrolling = true;
         $('.wrapper').scrollTo($(el), {
-            onAfter: function (el) {
+            onAfter: function (el) {  // after scrolling animation completes
                 scrolling = false;
-                $('.current').removeClass('current');
+                $('.current').removeClass('current');  // make the target element active
                 $(el).addClass('current');
             }
         });
