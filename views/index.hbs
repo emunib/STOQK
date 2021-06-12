@@ -1,5 +1,7 @@
 {{> border alignment="top"}}
-{{#each img_paths}}
-    {{> slide img_path=this}}
-{{/each}}
+<div class="slides-wrapper">
+    {{#each img_paths}}
+        {{> slide img_path=this}}
+    {{/each}}
+</div>
 {{> border alignment="bottom"}}
