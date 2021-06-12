@@ -1,0 +1,20 @@
+@import 'bootstrap/scss/bootstrap';
+
+.tiles {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  background-image: url('../img/border/tile.png');
+  background-size: auto 100%;
+  image-rendering: high-quality;
+  background-position-x: center;
+
+  &.top {
+    top: 0;
+  }
+
+  &.bottom {
+    bottom: 0;
+  }
+}
