@@ -3,7 +3,7 @@ var scrolling = false;  // flag to determine if scrolling
 function scrollToEl(el) {
     if ($(el).length > 0 && !scrolling) {  // the element exist and not already scrolling
         scrolling = true;
-        $('.wrapper').scrollTo($(el), {
+        $('.slides-wrapper').scrollTo($(el), {
             axis: 'x',
             duration: 500,
             offset: {top: 0, left: -$(el).parent().width()},
@@ -35,7 +35,7 @@ function relativePos(el) {
 }
 
 $(document).ready(function () {
-    $('.wrapper').scroll(function () {
+    $('.slides-wrapper').scroll(function () {
         var current = $('.current');  // currently active element
         var relPos = relativePos(current);  // position of active element relative to parent
         var target;  // new active element

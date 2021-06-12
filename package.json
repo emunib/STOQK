@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "build": "npm run css",
-    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 SASS/ -o public/css",
+    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 SCSS/ -o public/css",
     "css-prefix": "postcss --replace public/css/style.css --use autoprefixer --map",
     "css": "npm-run-all css-compile css-prefix",
     "server": "node ./bin/www",
     "start": "npm-run-all --parallel watch server",
-    "watch": "nodemon -e js,html,sass -x \"npm run css\""
+    "watch": "nodemon -e hbs,js,html,scss -x \"npm run css\""
   },
   "dependencies": {
     "bootstrap": "^4.6.0",

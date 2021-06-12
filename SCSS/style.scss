@@ -1,0 +1,28 @@
+@import "bootstrap/scss/bootstrap";
+
+.slides-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: auto;
+  max-height: 80vh;
+
+  // Hide scrollbar for IE, Edge and Firefox
+  -ms-overflow-style: none; // IE and Edge
+  scrollbar-width: none; // Firefox
+}
+
+// Hide scrollbar for Chrome, Safari and Opera
+.slides-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  min-height: 10px;
+  height: 80vh;
+}
+
+img {
+  max-height: 100%;
+}
