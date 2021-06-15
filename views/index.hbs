@@ -1,11 +1,13 @@
-{{> border alignment="top"}}
-<div class="slides-wrapper">
-    {{#each img_paths}}
-        {{#if @first}}
-            {{> slide img_path=this current=true}}
-        {{else}}
-            {{> slide img_path=this current=false}}
-        {{/if}}
-    {{/each}}
+<div class="content">
+    {{> border}}
+    <div class="slides-wrapper">
+        {{#each img_paths}}
+            {{#if @first}}
+                {{> slide img_path=this current=true}}
+            {{else}}
+                {{> slide img_path=this current=false}}
+            {{/if}}
+        {{/each}}
+    </div>
+    {{> border}}
 </div>
-{{> border alignment="bottom"}}
