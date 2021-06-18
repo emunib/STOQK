@@ -10,6 +10,7 @@ $border-height: (100% - $slide-height) / 2;
   background-size: auto 100%;
   image-rendering: high-quality;
   background-position-x: center;
+  pointer-events: none;  // disable pointer interactions with border
 }
 
 .content {
@@ -17,6 +18,8 @@ $border-height: (100% - $slide-height) / 2;
   max-height: 100vh;
   width: 100vw;
   max-width: 100vw;
+
+  user-select: none;  // content is unselectable
 }
 
 .slides-wrapper {
@@ -45,8 +48,10 @@ $border-height: (100% - $slide-height) / 2;
   align-items: center;
   min-height: 10px;
   height: 100%;
+  pointer-events: none;  // disable pointer interactions with slides
 }
 
 img {
   max-height: 100%;
 }
+
