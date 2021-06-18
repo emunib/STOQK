@@ -38,6 +38,8 @@ $(document).ready(function () {
     var $slidesWrapper = $('.slides-wrapper');
     var $content = $('.content');
 
+    $slidesWrapper.hScroll(40);  // make slides scrollable horizontally via mousewheel
+
     $slidesWrapper.scroll(function () {
         var current = $('.current');  // currently active element
         var relPos = relativePos(current);  // position of active element relative to parent
