@@ -35,7 +35,10 @@ function relativePos(el) {
 }
 
 $(document).ready(function () {
-    $('.slides-wrapper').scroll(function () {
+    var $slidesWrapper = $('.slides-wrapper');
+    var $content = $('.content');
+
+    $slidesWrapper.scroll(function () {
         var current = $('.current');  // currently active element
         var relPos = relativePos(current);  // position of active element relative to parent
         var target;  // new active element
@@ -52,8 +55,9 @@ $(document).ready(function () {
         }
     });
 
+    bindDragScroll($content, $slidesWrapper);
+
     $(document).keydown(function (e) {
-        console.log(scrolling);
         switch (e.key) {
             case "ArrowLeft":
                 scrollToEl($('.current').next('.slide'));

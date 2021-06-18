@@ -25,6 +25,11 @@ $border-height: (100% - $slide-height) / 2;
   overflow: auto;
   height: $slide-height;
 
+  cursor: grab;  // hand cursor for dragging
+  &.dragging {
+    cursor: grabbing;
+  }
+
   // Hide scrollbar for IE, Edge and Firefox
   -ms-overflow-style: none; // IE and Edge
   scrollbar-width: none; // Firefox
