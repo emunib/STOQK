@@ -17,6 +17,7 @@ function scrollToEl(el) {
     }
 }
 
+// TODO make barriers % based on width rather than a fixed 200px
 function relativePos(el) {
     var container = $(el).parent();
     var contWidth = container.width();
@@ -24,14 +25,18 @@ function relativePos(el) {
     var elemLeft = $(el).offset().left - container.offset().left;  // left position relative to parent container
     var elemRight = elemLeft + $(el).width();  // right position relative to parent container
 
-    if (elemRight <= 0) {  // element is offscreen to the left
+    if (elemRight <= 200) {  // element is offscreen to the left
         return -1;
     } else if (
-        elemLeft > contWidth) {  // element is offscreen to the right
+        elemLeft > contWidth - 200) {  // element is offscreen to the right
         return 1;
     } else {
         return 0;  // element is partially or fully in view
     }
+}
+
+function approxEq(v1, v2, epsilon = 0.001) {
+    return Math.abs(v1 - v2) <= epsilon;
 }
 
 $(document).ready(function () {
@@ -45,7 +50,11 @@ $(document).ready(function () {
         var relPos = relativePos(current);  // position of active element relative to parent
         var target;  // new active element
 
-        if (relPos > 0) {  // element is offscreen to the right
+        if (approxEq($slidesWrapper.scrollLeft(), 0, 5)) {
+            target = current.parent().children().first();
+        } else if (approxEq(-$slidesWrapper.scrollLeft(), $slidesWrapper[0].scrollWidth - $slidesWrapper.width(), 5)) {
+            target = current.parent().children().last();
+        } else if (relPos > 0) {  // element is offscreen to the right
             target = current.next('.slide');  // adjacent left element is visible
         } else if (relPos < 0) {  // element is offscreen to the right
             target = current.prev('.slide');  // adjacent right element is visible

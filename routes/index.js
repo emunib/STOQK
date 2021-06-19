@@ -15,7 +15,8 @@ router.get('/', function (req, res, next) {
             'https://via.placeholder.com/4000x600?text=7',
             'https://via.placeholder.com/8000x700/808080?text=8',
             'https://via.placeholder.com/500x1600?text=9',
-            'https://via.placeholder.com/3000x800/808080?text=10'
+            'https://via.placeholder.com/3000x800/808080?text=10',
+            'https://via.placeholder.com/100x100?text=11'
         ]
     });
 });
