@@ -3,7 +3,11 @@ var router = express.Router();
 
 /* GET vocabulary listing. */
 router.get('/', function (req, res, next) {
-    res.send('respond with a resource');
+    res.render('index', {
+        title: 'Split Translation of the Holy Quran',
+        name: 'vocabulary',
+        img_paths: []
+    });
 });
 
 module.exports = router;
