@@ -6,7 +6,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav">
             <li class="nav-item {{#ifEq name "english"}}active{{/ifEq}}">
                 <a class="nav-link" href="/english">English<span class="sr-only">(current)</span></a>
             </li>
@@ -17,5 +17,35 @@
                 <a class="nav-link" href="/vocabulary">Vocabulary</a>
             </li>
         </ul>
+
+        <form class="form-inline my-0 mr-auto ml-auto">
+            <select id="chapter-select" class="selectpicker" title="Choose a chapter" data-size="10">
+                {{#each options}}
+                    <option value="{{val}}">{{text}}</option>
+                {{/each}}
+            </select>
+
+            <label for="from-verse-select">From</label>
+            <select id="from-verse-select" class="selectpicker" title="Choose a verse" data-size="10">
+                {{#each options}}
+                    <option value="{{val}}">{{text}}</option>
+                {{/each}}
+            </select>
+
+            <label for="to-verse-select">To</label>
+            <select id="to-verse-select" class="selectpicker" title="Choose a verse" data-size="10">
+                {{#each options}}
+                    <option value="{{val}}">{{text}}</option>
+                {{/each}}
+            </select>
+
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Submit</button>
+        </form>
+
+        <div>
+            <button class="btn btn-primary">Sub</button>
+            <button class="btn btn-primary">Sub</button>
+            <button class="btn btn-primary">Sub</button>
+        </div>
     </div>
 </nav>

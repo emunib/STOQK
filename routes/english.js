@@ -18,6 +18,22 @@ router.get('/', function (req, res, next) {
             'https://via.placeholder.com/500x1600?text=9',
             'https://via.placeholder.com/3000x800/808080?text=10',
             'https://via.placeholder.com/100x100?text=11'
+        ],
+        options: [
+            {val: 1, text: 'Verse 1'},
+            {val: 2, text: 'Verse 2'},
+            {val: 3, text: 'Verse 3'},
+            {val: 4, text: 'Verse 4'},
+            {val: 5, text: 'Verse 5'},
+            {val: 6, text: 'Verse 6'},
+            {val: 7, text: 'Verse 7'},
+            {val: 8, text: 'Verse 8'},
+            {val: 9, text: 'Verse 9'},
+            {val: 10, text: 'Verse 10'},
+            {val: 11, text: 'Verse 11'},
+            {val: 12, text: 'Verse 12'},
+            {val: 13, text: 'Verse 13'},
+            {val: 14, text: 'Verse 14'}
         ]
     });
 });
