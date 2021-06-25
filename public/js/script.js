@@ -40,6 +40,21 @@ function approxEq(v1, v2, epsilon = 0.001) {
 }
 
 $(document).ready(function () {
+    var $chapterSelect = $('#chapter-select');
+
+    // initialize chapter select
+    $chapterSelect.select2({
+        theme: 'bootstrap4',
+        width: '120px',
+        placeholder: 'Choose a chapter',
+        dropdownParent: $('#chapter-group')
+    });
+
+    // on selecting a chapter navigate to the appropriate page
+    $chapterSelect.on('select2:selecting', function (e) {
+        window.location.pathname = e.params.args.data.id;
+    });
+
     var $slidesWrapper = $('.slides-wrapper');
     var $content = $('.content');
 
