@@ -1,5 +1,7 @@
 @import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-select/sass/bootstrap-select';
+@import 'select2/dist/css/select2.min';
+@import '@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.min';
+
 
 $slide-height: 80%;
 $border-height: (100% - $slide-height) / 2;

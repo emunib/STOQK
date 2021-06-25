@@ -12,6 +12,7 @@
     "watch": "nodemon -e hbs,js,html,scss -x \"npm run css\""
   },
   "dependencies": {
+    "@ttskch/select2-bootstrap4-theme": "^1.5.2",
     "bootstrap": "^4.6.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -22,11 +23,11 @@
     "jquery.scrollto": "^2.1.3",
     "morgan": "~1.9.1",
     "node-sass-middleware": "0.11.0",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "select2": "^4.1.0-rc.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "bootstrap-select": "^1.13.18",
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.13",
