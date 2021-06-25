@@ -26,21 +26,22 @@ router.get('/:num', function (req, res, next) {
             'https://via.placeholder.com/100x100?text=11' + ' - Ch.' + id
         ],
         options: [  // chapter select options and hrefs
-            {val: '/english/1', text: 'Verse 1'},
-            {val: '/english/2', text: 'Verse 2'},
-            {val: '/english/3', text: 'Verse 3'},
-            {val: '/english/4', text: 'Verse 4'},
-            {val: '/english/5', text: 'Verse 5'},
-            {val: '/english/6', text: 'Verse 6'},
-            {val: '/english/7', text: 'Verse 7'},
-            {val: '/english/8', text: 'Verse 8'},
-            {val: '/english/9', text: 'Verse 9'},
-            {val: '/english/10', text: 'Verse 10'},
-            {val: '/english/11', text: 'Verse 11'},
-            {val: '/english/12', text: 'Verse 12'},
-            {val: '/english/13', text: 'Verse 13'},
-            {val: '/english/14', text: 'Verse 14'}
-        ]
+            {val: '/english/1', text: 'Chapter 1'},
+            {val: '/english/2', text: 'Chapter 2'},
+            {val: '/english/3', text: 'Chapter 3'},
+            {val: '/english/4', text: 'Chapter 4'},
+            {val: '/english/5', text: 'Chapter 5'},
+            {val: '/english/6', text: 'Chapter 6'},
+            {val: '/english/7', text: 'Chapter 7'},
+            {val: '/english/8', text: 'Chapter 8'},
+            {val: '/english/9', text: 'Chapter 9'},
+            {val: '/english/10', text: 'Chapter 10'},
+            {val: '/english/11', text: 'Chapter 11'},
+            {val: '/english/12', text: 'Chapter 12'},
+            {val: '/english/13', text: 'Chapter 13'},
+            {val: '/english/14', text: 'Chapter 14'}
+        ],
+        selected: id - 1
     });
 });
 

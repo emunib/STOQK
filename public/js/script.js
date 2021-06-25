@@ -41,13 +41,28 @@ function approxEq(v1, v2, epsilon = 0.001) {
 
 $(document).ready(function () {
     var $chapterSelect = $('#chapter-select');
+    var $fromSelect = $('#from-select');
+    var $toSelect = $('#to-select');
 
     // initialize chapter select
     $chapterSelect.select2({
         theme: 'bootstrap4',
-        width: '120px',
         placeholder: 'Choose a chapter',
         dropdownParent: $('#chapter-group')
+    });
+
+    // initialize from select
+    $fromSelect.select2({
+        theme: 'bootstrap4',
+        placeholder: 'Choose a verse',
+        dropdownParent: $('#from-group'),
+    });
+
+    // initialize to select
+    $toSelect.select2({
+        theme: 'bootstrap4',
+        placeholder: 'Choose a verse',
+        dropdownParent: $('#to-group'),
     });
 
     // on selecting a chapter navigate to the appropriate page

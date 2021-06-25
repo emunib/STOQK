@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
     <span class="navbar-brand mb-0 h1">STOQK</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,20 +17,39 @@
                 <a class="nav-link" href="/vocabulary">Vocabulary</a>
             </li>
         </ul>
-
-        <form class="form-inline my-0 mr-auto ml-auto">
-            <div id="chapter-group" class="input-group">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="chapter-select">Chapter</label>
-                </div>
-                <select id="chapter-select">
-                    {{#each options}}
-                        <option value="{{val}}">{{text}}</option>
-                    {{/each}}
-                </select>
+        <div id="chapter-group" class="input-group mx-auto">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="chapter-select">Chapter</label>
             </div>
-<!--            <button class="btn btn-primary my-2 my-sm-0" type="submit">Submit</button>-->
-        </form>
+            <select id="chapter-select">
+                {{#each options}}
+                    <option value="{{val}}" {{#ifEq @index ../selected}}selected="selected"{{/ifEq}}>{{text}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div id="from-group" class="input-group mr-2">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="from-select">From</label>
+            </div>
+            <select id="from-select">
+                {{#each options}}
+                    <option value="{{val}}">{{text}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div id="to-group" class="input-group mr-2">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="from-select">To</label>
+            </div>
+            <select id="to-select">
+                {{#each options}}
+                    <option value="{{val}}">{{text}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <!--        <form class="form-inline my-0 mr-auto ml-auto">-->
+                    <button class="btn btn-primary my-2 my-sm-0 mr-auto" type="submit">Submit</button>
+        <!--        </form>-->
         <div>
             <button class="btn btn-primary">Sub</button>
             <button class="btn btn-primary">Sub</button>
