@@ -17,39 +17,41 @@
                 <a class="nav-link" href="/vocabulary">Vocabulary</a>
             </li>
         </ul>
-        <div id="chapter-group" class="input-group mx-auto">
+        <div id="chapter-group" class="input-group ml-auto mr-4">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="chapter-select">Chapter</label>
             </div>
             <select id="chapter-select">
-                {{#each options}}
-                    <option value="{{val}}" {{#ifEq @index ../selected}}selected="selected"{{/ifEq}}>{{text}}</option>
+                {{#each chapter_options}}
+                    <option value="{{id}}" {{#ifEq @index ../c_index}}selected="selected"{{/ifEq}}>{{text}}</option>
                 {{/each}}
             </select>
         </div>
-        <div id="from-group" class="input-group mr-2">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="from-select">From</label>
+        <form class="form-inline my-0 mr-auto">
+            <div id="from-group" class="input-group mr-2">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="from-select">From</label>
+                </div>
+                <select id="from-select" name="from">
+                    {{#each verse_options}}
+<!--                        <option value="{{id}}">{{text}}</option>-->
+                        <option value="{{id}}" {{#ifEq @index ../f_index}}selected="selected"{{/ifEq}}>{{text}}</option>
+                    {{/each}}
+                </select>
             </div>
-            <select id="from-select">
-                {{#each options}}
-                    <option value="{{val}}">{{text}}</option>
-                {{/each}}
-            </select>
-        </div>
-        <div id="to-group" class="input-group mr-2">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="from-select">To</label>
+            <div id="to-group" class="input-group mr-2">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="from-select">To</label>
+                </div>
+                <select id="to-select" name="to">
+                    {{#each verse_options}}
+<!--                        <option value="{{id}}">{{text}}</option>-->
+                        <option value="{{id}}" {{#ifEq @index ../t_index}}selected="selected"{{/ifEq}}>{{text}}</option>
+                    {{/each}}
+                </select>
             </div>
-            <select id="to-select">
-                {{#each options}}
-                    <option value="{{val}}">{{text}}</option>
-                {{/each}}
-            </select>
-        </div>
-        <!--        <form class="form-inline my-0 mr-auto ml-auto">-->
-                    <button class="btn btn-primary my-2 my-sm-0 mr-auto" type="submit">Submit</button>
-        <!--        </form>-->
+            <button class="btn btn-primary my-2 my-sm-0 mr-auto" type="submit">Go</button>
+        </form>
         <div>
             <button class="btn btn-primary">Sub</button>
             <button class="btn btn-primary">Sub</button>

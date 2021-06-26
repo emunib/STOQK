@@ -1,0 +1,74 @@
+{
+  "1": [
+    {
+      "id": 1,
+      "path": "https://via.placeholder.com/5000x1600?text=C1V1"
+    },
+    {
+      "id": 2,
+      "path": "https://via.placeholder.com/8000x1600/808080?text=C1V2"
+    },
+    {
+      "id": 3,
+      "path": "https://via.placeholder.com/500x1600?text=C1V3"
+    }
+  ],
+  "2": [
+    {
+      "id": 1,
+      "path": "https://via.placeholder.com/8000x1600?text=C2V1"
+    },
+    {
+      "id": 2,
+      "path": "https://via.placeholder.com/5000x1600/808080?text=C2V2"
+    },
+    {
+      "id": 3,
+      "path": "https://via.placeholder.com/9000x1600?text=C2V3"
+    },
+    {
+      "id": 4,
+      "path": "https://via.placeholder.com/500x600/808080?text=C2V4"
+    }
+  ],
+  "3": [
+    {
+      "id": 1,
+      "path": "https://via.placeholder.com/1000x400?text=C3V1"
+    },
+    {
+      "id": 2,
+      "path": "https://via.placeholder.com/10000x800/808080?text=C3V2"
+    }
+  ],
+  "4": [
+    {
+      "id": 1,
+      "path": "https://via.placeholder.com/5000x1600?text=C4V1"
+    },
+    {
+      "id": 2,
+      "path": "https://via.placeholder.com/11000x1600/808080?text=C4V2"
+    },
+    {
+      "id": 3,
+      "path": "https://via.placeholder.com/8000x1600?text=C4V3"
+    },
+    {
+      "id": 4,
+      "path": "https://via.placeholder.com/9000x1600/808080?text=C4V4"
+    },
+    {
+      "id": 5,
+      "path": "https://via.placeholder.com/6000x1600?text=C4V5"
+    },
+    {
+      "id": 6,
+      "path": "https://via.placeholder.com/8000x1600/808080?text=C4V6"
+    },
+    {
+      "id": 7,
+      "path": "https://via.placeholder.com/500x1600?text=C4V7"
+    }
+  ]
+}

@@ -70,6 +70,26 @@ $(document).ready(function () {
         window.location.pathname = e.params.args.data.id;
     });
 
+    // on selecting from verse ensure from <= to
+    $fromSelect.on('select2:selecting', function (e) {
+        var from = parseInt(e.params.args.data.id);
+        var to = parseInt($toSelect.select2('data')[0].id);
+
+        if (from > to) {
+            $toSelect.val(from).trigger('change').change();
+        }
+    });
+
+    // on selecting to verse ensure from <= to
+    $toSelect.on('select2:selecting', function (e) {
+        var to = parseInt(e.params.args.data.id);
+        var from = parseInt($fromSelect.select2('data')[0].id);
+
+        if (to < from) {
+            $fromSelect.val(to).trigger('change').change();
+        }
+    });
+
     var $slidesWrapper = $('.slides-wrapper');
     var $content = $('.content');
 
