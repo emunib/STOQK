@@ -27,7 +27,7 @@ router.get('/:chapter/:from?/:to?', function (req, res, next) {
         name: 'english',
         img_paths: data[c_id].filter(x => x.id >= f_id && x.id <= t_id).map(x => x.path),
         chapter_options:
-            Object.keys(data).map(x => ({id: '/english/' + x, text: x})),
+            Object.keys(data).map(x => ({id: x, path: '/english/' + x, text: x})),
         verse_options: data[c_id].map(x => ({id: x.id, text: x.id})),
         c_index: c_id - 1,
         f_index: f_id - 1,
@@ -36,7 +36,7 @@ router.get('/:chapter/:from?/:to?', function (req, res, next) {
 });
 
 router.post('/', function (req, res) {
-    var cId = req.body.chapter.split('/')[2];
+    var cId = req.body.chapter;
     var fId = req.body.from;
     var tId = req.body.to;
 

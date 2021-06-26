@@ -24,7 +24,7 @@
                 </div>
                 <select id="chapter-select" name="chapter">
                     {{#each chapter_options}}
-                        <option value="{{id}}" {{#ifEq @index ../c_index}}selected="selected"{{/ifEq}}>{{text}}</option>
+                        <option data-href="{{path}}" value="{{id}}" {{#ifEq @index ../c_index}}selected="selected"{{/ifEq}}>{{text}}</option>
                     {{/each}}
                 </select>
             </div>

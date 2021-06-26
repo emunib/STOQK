@@ -67,7 +67,7 @@ $(document).ready(function () {
 
     // on selecting a chapter navigate to the appropriate page
     $chapterSelect.on('select2:selecting', function (e) {
-        window.location.pathname = e.params.args.data.id;
+        window.location.pathname = e.params.args.data.element.getAttribute("data-href");
     });
 
     // on selecting from verse ensure from <= to
