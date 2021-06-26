@@ -119,6 +119,13 @@ $(document).ready(function () {
 
     bindDragScroll($content, $slidesWrapper);
 
+    $('#next-button').click(function () {
+        scrollToEl($('.current').next('.slide'));
+    });
+    $('#prev-button').click(function () {
+        scrollToEl($('.current').prev('.slide'));
+    });
+
     $(document).keydown(function (e) {
         switch (e.key) {
             case "ArrowLeft":
