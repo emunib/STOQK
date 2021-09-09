@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var data = require('../data/data.json');
+var data = require('../data/dataUtilities');
 
 /* GET english translation listing. Redirect to chapter 1, verse 1.*/
 router.get('/', function (req, res, next) {
@@ -25,10 +25,9 @@ router.get('/:chapter/:from?/:to?', function (req, res, next) {
     res.render('index', {
         title: 'Split Translation of the Holy Quran',
         name: 'english',
-        img_paths: data[c_id].filter(x => x.id >= f_id && x.id <= t_id).map(x => x.path),
-        chapter_options:
-            Object.keys(data).map(x => ({id: x, path: '/english/' + x, text: x})),
-        verse_options: data[c_id].map(x => ({id: x.id, text: x.id})),
+        img_paths: data.imgPaths('english', c_id, f_id, t_id),
+        chapter_options: data.chapters('english'),
+        verse_options: data.verses('english', c_id),
         c_index: c_id - 1,
         f_index: f_id - 1,
         t_index: t_id - 1
